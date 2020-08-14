@@ -1,0 +1,4 @@
+**/color
+*.json
+*.lock
+**/node_modules
