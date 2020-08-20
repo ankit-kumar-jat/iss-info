@@ -1,0 +1,32 @@
+footer
+    background-color: $brand-main
+    ul
+        list-style: none
+        margin: 0
+        display: flex
+        padding: 0
+        &>li
+            padding: 1rem 0
+            font-size: 1.2rem
+            color: $brand-light
+            text-align: center
+            &:last-child
+                margin-left: auto
+            &>a
+                color: $brand-light
+                margin-left: 4px
+                &:hover
+                    color: lighten($brand-primary, 10%)
+                &:active
+                    color: $brand-light
+@media screen and ( max-width: 600px)
+    footer
+        ul
+            flex-direction: column
+            &>li
+                margin: auto
+                &:first-child
+                    padding-bottom: 0
+
+@media screen and ( max-width: 330px )
+    

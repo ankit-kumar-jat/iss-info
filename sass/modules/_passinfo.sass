@@ -1,0 +1,34 @@
+.pass-info
+    padding-top: 2rem
+    font-size: 1.2rem
+    color: $brand-main
+    ol
+        padding-left: 20px
+
+.data-list
+    list-style: none
+    padding: 0
+    margin-bottom: 15px
+.table
+    overflow-x: auto
+.pass-table
+    width: 100%
+    min-width: 700px
+    margin-bottom: 1.5rem
+    &>thead
+        background-color: darken($brand-main-light, 5%)
+        color: $brand-light
+        &>tr>th
+            padding: .5rem
+            text-transform: uppercase
+    &>tbody
+        text-align: center
+        &>tr>th,&>tr>td
+            padding: .5rem
+        &>tr:nth-child(odd)
+            background-color: lighten($brand-main-lighter, 15%)
+        &>tr:hover
+            background-color: lighten($brand-main-lighter, 7%)
+
+
+    

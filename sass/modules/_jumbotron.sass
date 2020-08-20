@@ -1,0 +1,42 @@
+.jumbotron
+    min-height: 430px
+    height: 100vh
+    width: 100%
+    background-image: url(/assets/iss-with-earth-hero-1000-optimized.png)
+    background-repeat: no-repeat
+    background-size: cover
+    background-attachment: fixed
+    // overflow: hidden
+    .jumbotron__heading
+        margin: 0
+        padding-top: 40vh
+        color: $brand-light
+        line-height: 4rem
+        font-size: 3rem
+    .jumbotron__btn
+        margin-top: 1rem
+        font-size: 1.3rem
+        font-weight: bold
+        +btn-main(.6rem 1.5rem, 32px, $brand-light, $brand-primary)
+        &:hover
+            background-color: $brand-primary
+            color: $brand-light
+        &:active
+            background-color: $brand-light
+            color: $brand-primary
+
+@media screen and ( max-width: 500px)
+    .jumbotron
+        .jumbotron__heading
+            line-height: 3rem
+            font-size: 2.5rem
+@media screen and ( max-width: 392px)
+    .jumbotron
+        .jumbotron__heading
+            line-height: 2.7rem
+            font-size: 2rem
+    
+
+    
+
+

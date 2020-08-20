@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Reqired-Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1d3557">
+    <meta name="Author" content="Ankit Kumar Jat">
+    <meta name="description" content="Web app (site) that shows current information of International Space Station. such as location, crew info, pass forecast etc.">    
+    <meta name="keywords" content="iss-info,iss">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <title>ISS Info : Find where is the International Space Station?</title>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css">
+    <style>
+        .uppy-spinner{
+        animation: mymove .5s infinite linear;
+        }
+        @keyframes mymove {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky">
+        <div class="container navbar">
+            <div class="navbar__brand">
+                <img src="assets/ISS_Trace_A8DADC.svg" alt="iss-trace black image" height="50px">
+                <h1>ISS-INFO</h1>
+                <div class="navbar__toggler" hidden>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="navbar__nav">
+                <ul class="navbar__links">
+                    <li><a href="#about" class="navbar__link">About ISS</a></li>
+                    <li><a href="#locate" class="navbar__link">Locate</a></li>
+                    <li><a href="#forecast" class="navbar__link">Pass forecast</a></li>
+                    <li><a href="#crew" class="navbar__link">Crew</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="jumbotron">
+            <div class="overlay">
+                <div class="container">
+                    <h1 class="jumbotron__heading">Where is the <br>International Space <br>Station?</h1>
+                    <a href="#locate"><button class="jumbotron__btn">Locate Now</button></a>
+                </div>
+            </div>
+        </div>
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="about-section__heading">About ISS</h2>
+                <p class="about-section__text">The International Space Station (ISS) is a modular space station (habitable artificial satellite) in low Earth orbit. It is a multinational collaborative project between five participating space agencies: NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada). The ownership and use of the space station is established by intergovernmental treaties and agreements.</p>
+                <p class="about-section__text">The International Space Station with ESA’s Columbus laboratory flies 400 km average high at speeds that defy gravity – literally. At 28 800 km/h it only takes 90 minutes for the weightless laboratory to make a complete circuit of Earth. Astronauts working and living on the Station experience 16 sunrises and sunsets each day.</p>
+                <p class="about-section__text">Due to Earth's rotation the Station seems to travel from west to east over our planet. At an average altitude of 248 miles (400 kilometers) above Earth, the space station is the third brightest object in the sky. You can see the International Space Station with your own eyes from here by looking up at the right time.</p>
+            </div>
+        </section>
+        <div class="map-area" id="locate">
+            <div class="container">
+                <h2 class="map-area__heading">ISS Live Location</h2>
+                <div class="live-data">
+                    <div class="live-map" id="map"></div>
+                    <div class="live-map-info">
+                        <p><strong>Timestemp: </strong><span class="timestamp"></span></p>
+                        <p><strong>Latitude: </strong><span class="latitude"></span></p>
+                        <p><strong>Longitude: </strong><span class="longitude"></span></p>
+                        <p><strong>Velocity: </strong><span class="velocity"></span></p>
+                        <p><strong>Visibility: </strong><span class="visibility"></span></p>
+                    </div>
+                </div>
+                <p class="note"><i>your location that is shown above map is calculted by your public ip address.</i></p>
+            </div>
+        </div>
+        <div class="forecast" id="forecast">
+            <div class="container">
+                <h2 class="forecast__heading">ISS Pass forecast</h2>
+                <div class="forecast__data">
+                    <form class="form">
+                        <input type="text" class="form__field" placeholder="Your City Name" />
+                <button type="button" class="forecast__btn">forecast</button>
+                    </form>
+                    <p class="note"><i>If you keep city name blank, then please allow location service to find your location.</i></p>
+                </div>
+                <div class="spinner"><img src="./assets/spinner.svg" alt="spinner" class="uppy-spinner"></div>
+                <div class="show-forecast">
+                    <div class="pass-info">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="crew" id="crew">
+            <div class="container">
+                <h2 class="crew__heading">ISS Crew Details</h2>
+                <div class="crew__data">
+                    <p>Currently there are <span class="crew-no"></span> crew members in the international space station. Name of those are following:</p>
+                    <ol class="crew-list">
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="gotop" hidden>
+            <div class="cap"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <ul class="footer__list">
+                <li class="footer__items">&copy; Ankit Kumar Jat</li>
+                <li class="footer__items">Made with &hearts; by <a href="https://github.com/ankit-kumar-jat" target="_blank"> @ankit-kumar-jat</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./js/bundle.js"></script>   
+</body>
+</html>

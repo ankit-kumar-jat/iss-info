@@ -1,0 +1,87 @@
+.sticky
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 99
+    // no Highlights
+    -webkit-tap-highlight-color: rgba(0 , 0, 0, 0)
+    -webkit-tap-highlight-color: transparent
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+.solid-nav
+    background-color: $brand-main
+.navbar
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    box-sizing: border-box
+    text-transform: uppercase
+    // box-shadow: 0 2px 10px $gray
+    color: $brand-light
+    .navbar__brand
+        display: flex
+        align-items: center
+        cursor: pointer
+        color: $brand-primary
+        h1
+            margin-left: 10px
+    .navbar__toggler
+        margin-left: auto
+        .line
+            box-sizing: border-box
+            border: 2px solid $brand-light
+            border-radius: 32px
+            margin: 5px
+            width: 35px
+        &:hover, &:focus, &:active
+            .line
+                border-color: $brand-primary
+
+    .navbar__nav
+        margin-left: auto
+    .navbar__links
+        display: flex
+        align-items: center
+        list-style: none
+        font-size: 1.3rem
+        margin-top: 0
+        margin-bottom: 0
+    .navbar__links > li:not(:last-child)
+        margin-right: 2rem
+    .navbar__link
+        text-decoration: none
+        color: $brand-light
+        &:hover, &:focus
+            color: $brand-primary
+            cursor: pointer
+            // box-sizing: border-box
+            border-bottom: 4px solid $brand-primary
+
+@media screen and ( max-width: 825px)
+    .navbar__nav
+        display: none
+    .navbar__toggler
+        display: block
+    .navbar
+        .navbar__brand
+            width: 100%
+        .navbar__links
+            flex-direction: column
+            & > li, & > li:not(:last-child)
+                margin-right: auto
+                margin-bottom: 20px
+                 
+        .navbar__nav
+            width: 100%
+            margin: 5px 0 0 0
+            border-top: 1px solid $brand-primary
+            padding-top: 20px
+
+
+
+    
+
+    

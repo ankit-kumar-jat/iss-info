@@ -2,3 +2,4 @@
 *.json
 *.lock
 **/node_modules
+**/.sass-cache
